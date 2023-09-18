@@ -1,0 +1,25 @@
+Projeto Net.6 para aplicação dos conceitos de desenvolvimento front e back, dos componentes de Sistemas Web I e Interfaces Web II
+
+/* Configuração e Clone do Repositório GIT */
+git config --global user.name "José Antonio Gallo Junior"
+git config --global user.email gallojunior@gmail.com
+git clone https://github.com/gallojunior/pokedex-2MTecA.git
+
+
+/* Criando o projeto WEB com solução*/
+dotnet new sln --name Pokedex
+
+dotnet new mvc --name Pokedex -f net6.0
+
+dotnet sln add Pokedex\Pokedex.csproj
+
+
+/* Para executar o projeto */
+dotnet watch run
+
+
+
+/* Subindo o projeto no GIT*/
+git add .
+git commit -m "Descrever as alterações realizadas no projeto"
+git push
