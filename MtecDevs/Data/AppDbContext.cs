@@ -13,4 +13,10 @@ public class AppDbContext : IdentityDbContext
 
     public DbSet<Usuario> Usuarios { get; set; }
      public DbSet<TipoDev> TipoDevs { get; set; }
+
+     protected override void onModelCreating(ModelBuilder builder)
+    {
+        base.onModelCreating(builder);
+    }
+
 }
