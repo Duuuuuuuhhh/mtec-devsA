@@ -39,5 +39,5 @@
         dotnet tool install --global dotnet-ef
     
     // Comandos para criar e aplicar as migrações 
-        dotnet ef migration add criar-banco
+        dotnet ef migrations add criar-banco
         dotnet ef database update
