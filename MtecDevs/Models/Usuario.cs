@@ -1,9 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Identiny;
-{
-    
-}
+using Microsoft.AspNetCore.Identity;
+
 namespace MtecDevs.Models;
 
 public class Usuario

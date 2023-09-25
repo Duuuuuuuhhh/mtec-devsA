@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Identiny.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MtecDevs.Models;
 
@@ -14,9 +14,9 @@ public class AppDbContext : IdentityDbContext
     public DbSet<Usuario> Usuarios { get; set; }
      public DbSet<TipoDev> TipoDevs { get; set; }
 
-     protected override void onModelCreating(ModelBuilder builder)
+     protected override void OnModelCreating(ModelBuilder builder)
     {
-        base.onModelCreating(builder);
+        base.OnModelCreating(builder);
     }
 
 }

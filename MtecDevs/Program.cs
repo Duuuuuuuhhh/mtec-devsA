@@ -8,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Objetos auxiliares de conexão
-string conn = builder.Configuration.GetConnectionsString("MtecDevs");
-var version = ServeVersion.AutoDetect(conn);
+string conn = builder.Configuration.GetConnectionString("MtecDevs");
+var version = ServerVersion.AutoDetect(conn);
 
 //servico de conexão com banco de dados - Entity
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -18,8 +18,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Serviço de gestão de usuario - Identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddIdentityFrameworkStores<AppDbContext>()
-        .AddfaultTokenProviders();
+    .AddEntityFrameworkStores<AppDbContext>()
+        .AddDefaultTokenProviders();
 
 var app = builder.Build();
 
