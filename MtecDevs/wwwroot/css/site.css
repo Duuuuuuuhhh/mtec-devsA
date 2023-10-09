@@ -1,6 +1,11 @@
 html {
   font-size: 14px;
+  position: relative;
+  min-width: 100vh;
 }
+
+body {
+  min-width: 100vh;}
 
 @media (min-width: 768px) {
   html {
