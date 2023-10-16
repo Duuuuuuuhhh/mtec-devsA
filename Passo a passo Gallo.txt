@@ -1,7 +1,7 @@
 /* Configuração do Git */
-git config --global user.name GalloJunior
-git config --global user.email gallojunior@gmail.com
-git clone https://github.com/gallojunior/mtec-devsA.git
+git config --global user.name "Eduardo Dametto"
+git config --global user.email eduardo.dametto@etec.sp.gov.br
+git clone https://github.com/Duuuuuuuhhh/mtec-devsA.git
 
 cd MtecDevs
 dotnet restore
@@ -20,7 +20,7 @@ dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 6
 /* Salvar tudo no GitHub */
 Estar na pasta do repositório
 git add .
-git commit -m "Criado a solução e o projeto"
+git commit -m "Descrever oq fizemos"
 git push
 
 
