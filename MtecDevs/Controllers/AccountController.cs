@@ -31,6 +31,15 @@ public class AccountController : Controller
         return View(loginVM);
     }
 
+    [HttpGet]
+    public IActionResult Register(string returnUrl)
+    {
+        RegisterVM registerVM = new() {
+            UrlRetorno = returnUrl ?? Url.Content("~/")
+        };
+        return View(registerVM);
+    }
+
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(LoginVM login)

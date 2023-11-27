@@ -1,0 +1,90 @@
+@model MtecDevs.ViewModels.RegisterVM
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+<main class="container-fluid p-4">
+    <form method="post">
+        <div class="text-center mb-4">
+           <img src="~/img/logo2.png" alt="Logo" width="350">
+        </div>
+        <input type="hidden" asp-for="UrlRetorno">
+        <div class="text-danger" asp-validation-summary="ModelOnly" hidden></div>
+
+        <div class="mb-3">
+            <label asp-for="Nome" class="form-label"></label>
+            <input asp-for="Nome" class="form-control">
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+
+          <div class="mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+          <div class="mb-3">
+            <label asp-for="DataNascimento" class="form-label"></label>
+            <input asp-for="DataNascimento" class="form-control">
+            <span asp-validation-for="DataNascimento" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Senha" class="form-label"></label>
+            <input asp-for="Senha" class="form-control">
+            <span asp-validation-for="Senha" class="text-danger"></span>
+        </div>
+
+                  <div class="mb-3">
+            <label asp-for="TipoDevId" class="form-label"></label>
+            <input asp-for="TipoDevId" class="form-control">
+            <span asp-validation-for="TipoDevId" class="text-danger"></span>
+        </div>
+
+                  <div class="mb-3">
+            <label asp-for="Foto" class="form-label"></label>
+            <input asp-for="Foto" class="form-control">
+            <span asp-validation-for="Foto" class="text-danger"></span>
+        </div>
+
+        <div class="mb3 form-check">
+            <input type="checkbox" asp-for="Lembrar" class="form-check-input">
+            <label asp-for="Lembrar" class="form-check-label"></label>
+        </div>
+
+        <button type="submit" class="w-100 btn btn-primary">Entrar</button>
+
+        <a asp-action="Forget" class="d-block text-center mt-3 text-decoration-none">
+            Esqueceu sua Senha?
+        </a>
+
+        <div class="separator">
+            <div class="line"></div>
+            <h6>Novo por Aqui?</h6>
+            <div class="line"></div>
+        </div>
+
+        <a asp-action="Register" class="w-100 btn btn-success mt-1">
+            Criar Conta
+        </a>
+
+    </form>
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"></partial>
+    <script>
+        let mensagemErro = '';
+        $('.asp-validation-summary-erros ul li').each(function () {
+            mensagemErro += $(this).text();
+        });
+        if (mensagemErro != '') {
+            Swal.fire({
+                title: 'Acesso Negado',
+                text: mensagemErro,
+                icon: 'error'
+            });
+        }
+    </script>
+}
